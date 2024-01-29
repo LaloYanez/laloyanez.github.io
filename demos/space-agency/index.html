@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title></title>
+    <title>Space Agency</title>
     <link rel="stylesheet" href="/style.css" />
     <script src="/script.js" defer></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
@@ -13,16 +13,11 @@
     <script src="https://rawgit.com/protyze/aframe-curve-component/master/dist/aframe-curve-component.min.js"></script>
     <script src="https://unpkg.com/aframe-aabb-collider-component@3.1.0/dist/aframe-aabb-collider-component.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <script src="https://arca-landing.glitch.me/alongpath.js"></script>
+    <script src="/alongpath.js"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo:ital@1&display=swap" rel="stylesheet">
-    <!-- 
-    <script src="https://cdn.jsdelivr.net/gh/mrxz/effekseer-sample-effects/effekseer-build/effekseer.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@zip.js/zip.js/dist/zip.min.js"></script>
-    <script src="/effekseer.umd.min.js"></script> -->
-    
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital@1&display=swap" rel="stylesheet">    
   </head>
   
   <body>
@@ -42,8 +37,7 @@
               background="" fog="color:  #0d2f49;  density:  0.001;  near:  .07;  type:  exponential" style="pointer-events: auto; position: fixed;"
               >
         <a-assets timeout="30000">
-          <a-asset-item id="Spaceship" src="https://cdn.glitch.global/0ed7936d-2680-4461-9d13-99d12f3abe79/Spaceship2.glb?" crossorigin="anonymous"></a-asset-item>
-          <a-asset-item id="effect-asset" src="https://cdn.jsdelivr.net/gh/mrxz/effekseer-sample-effects/effects/tktk02/Blow3.efkpkg" response-type="arraybuffer"></a-asset-item>
+          <a-asset-item id="Spaceship" src="/Spaceship2.glb?" crossorigin="anonymous"></a-asset-item>
         </a-assets>
 
         <a-entity id="rig" trail="offset: -8 -4 0; length: 50; width: .3;" alongpath-scroll="curve: #track1;" position="26.698 23.487 4.839">
@@ -61,7 +55,7 @@
             
             <a-entity light="intensity: 0.3; castShadow: false; type: point; decay: 2.98; distance: 9.45" position="0 1.306 -10"></a-entity>
           </a-entity>
-          <a-entity geometry="primitive: sphere" rotation="0 180 0" scale="1000 1000 1000" material="side: back; src: https://cdn.glitch.global/0ed7936d-2680-4461-9d13-99d12f3abe79/2k_stars_milky_way.jpg?v=1699112332618"></a-entity>
+          <a-entity geometry="primitive: sphere" rotation="0 180 0" scale="1000 1000 1000" material="side: back; src: /2k_stars_milky_way.jpg"></a-entity>
         </a-entity>
 
         <a-curve id="track1" curve="type: Spline">
@@ -86,7 +80,7 @@
        <a-draw-curve curveref="#track2" visible="false" material="shader: line; color: red;"></a-draw-curve>
         
        <a-entity geometry="primitive: sphere; segmentsHeight: 64" 
-                 material="src: https://cdn.glitch.global/0ed7936d-2680-4461-9d13-99d12f3abe79/2k_makemake_fictional.jpg?v=1699112236305;
+                 material="src: /2k_makemake_fictional.jpg;
                            roughness: 1; opacity: 1; emissiveIntensity: 0.130; emissive: #7a3700;" 
                  scale="20 20 20" 
                  position="-3.087 10 -38"
@@ -95,7 +89,7 @@
         
         <a-entity geometry="primitive: plane;"
                  material="transparent: true; alphaTest: .9;
-                           src: https://cdn.glitch.global/0ed7936d-2680-4461-9d13-99d12f3abe79/Atmosphere.png?v=1699820798736;
+                           src: /Atmosphere.png;
                            roughness: 1; opacity: 1; emissiveIntensity: 0.730; emissive: #990033;" 
                  scale="60 60 60" 
                 position="-3.087 12.129 -43.180" look-at="[camera]"
@@ -103,12 +97,12 @@
        </a-entity>
         
         <a-entity geometry="primitive: plane; width: 2; height: 2" position="-3.087 12.129 -43.180" 
-                  material="opacity: 1; alphaTest: 0.5; transparent: true; blending: normal; color: #ffffff; src: https://cdn.glitch.global/0ed7936d-2680-4461-9d13-99d12f3abe79/Atmosphere.png?v=1699820798736;" 
+                  material="opacity: 1; alphaTest: 0.5; transparent: true; blending: normal; color: #ffffff; src: /Atmosphere.png;" 
                   scale="15 15 15" look-at="[camera]">
        </a-entity>
        
        <a-entity geometry="primitive: sphere; segmentsHeight: 64" 
-                 material="src: https://cdn.glitch.global/0ed7936d-2680-4461-9d13-99d12f3abe79/2k_eris_fictional.jpg?v=1706548882232; roughness: 1; opacity: 1; emissiveIntensity: 0.130; emissive: #58bcee;" 
+                 material="src: /2k_eris_fictional.jpg?v=1706548882232; roughness: 1; opacity: 1; emissiveIntensity: 0.130; emissive: #58bcee;" 
                  scale="10 10 10" 
                  position="-153 30 -355"
                  animation="property: rotation; dur: 120000; from: 0 0 130; to: 0 -360 130; loop: true; easing: linear;">
@@ -116,7 +110,7 @@
         
          <a-entity geometry="primitive: plane;"
                  material="transparent: true; alphaTest: .005; blending: normal;
-                           src: https://cdn.glitch.global/0ed7936d-2680-4461-9d13-99d12f3abe79/Atmosphere.png?v=1699820798736;
+                           src: /Atmosphere.png;
                            roughness: 1; opacity: .9; emissiveIntensity: 0.730; emissive: #58bcee;" 
                  scale="40 40 40" 
                  position="-153 30 -355" look-at="[camera]"
@@ -124,7 +118,7 @@
        </a-entity>
        
        <a-entity geometry="primitive: sphere; segmentsHeight: 64"
-                 material="src: https://cdn.glitch.global/0ed7936d-2680-4461-9d13-99d12f3abe79/2k_sun.jpg?v=1706548709140;
+                 material="src: /2k_sun.jpg;
                            roughness: 1; opacity: 1; emissiveIntensity: 0.230; emissive: #ff7b00;" 
                  scale="13 13 13" 
                  position="-22 145 -292.365"
@@ -133,7 +127,7 @@
         
         <a-entity geometry="primitive: plane;"
                  material="transparent: true; alphaTest: .005;
-                           src: https://cdn.glitch.global/0ed7936d-2680-4461-9d13-99d12f3abe79/Atmosphere.png?v=1699820798736;
+                           src: /Atmosphere.png;
                            roughness: 1; opacity: 1; emissiveIntensity: 0.730; emissive: #ff0000;" 
                  scale="70 70 70" 
                  position="-22 145 -292.365" look-at="[camera]"
@@ -152,7 +146,7 @@
         
         <a-entity geometry="primitive: plane;"
                  material="transparent: true; alphaTest: .01; blending: additive;
-                           src: https://cdn.glitch.global/0ed7936d-2680-4461-9d13-99d12f3abe79/Atmosphere.png;
+                           src: /Atmosphere.png;
                            roughness: 1; opacity: 1; emissiveIntensity: 0.730; emissive: #58bcee;" 
                  scale="90 90 90" 
                  position="-30 -350 -1125" look-at="[camera]"

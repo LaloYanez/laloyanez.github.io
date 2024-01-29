@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/script.js" defer></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/akbartus/A-Frame-Component-Postprocessing/dist/post-processing.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://rawgit.com/protyze/aframe-curve-component/master/dist/aframe-curve-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-aabb-collider-component@3.1.0/dist/aframe-aabb-collider-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://arca-landing.glitch.me/alongpath.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital@1&display=swap" rel="stylesheet">
+    <!-- 
+    <script src="https://cdn.jsdelivr.net/gh/mrxz/effekseer-sample-effects/effekseer-build/effekseer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@zip.js/zip.js/dist/zip.min.js"></script>
+    <script src="/effekseer.umd.min.js"></script> -->
+    
+  </head>
+  
+  <body>
+    <div id="hero">
+      <h1>
+        Ready to take off for the journey of your lifetime?
+      </h1>
+      <p>
+        We are your ticket to the cosmos. Our mission is to make your dreams of space exploration a reality. Join us in this celestial odyssey.
+      </p>
+      <a id="scrolldown" onclick="tofront()">
+        Scroll down
+      </a>
+    </div>
+    <div id="scenediv">
+      <a-scene embedded vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" renderer="colorManagement: true" loading-screen="enabled: false;"
+              background="" fog="color:  #0d2f49;  density:  0.000;  near:  0.07;  type:  exponential" style="pointer-events: auto; position: fixed;"
+              post-processing="effect:  bloom;  bloomParams:  threshold:  0.1, strength:  0.4, radius:  1.5, exposure:  1; volumetricLightParams: decay: .98, density: .5, exposure: 0.3, samples: 250"
+              >
+        <a-assets timeout="30000">
+          <!-- <a-asset-item id="" src=""></a-asset-item> -->
+          <!--
+          <video id="" autoplay="true" playsinline crossorigin="anonymous" loop="true" src=""></video> -->
+          <!-- <img id="" src=""> -->
+          <a-asset-item id="effect-asset" src="https://cdn.jsdelivr.net/gh/mrxz/effekseer-sample-effects/effects/tktk02/Blow3.efkpkg" response-type="arraybuffer"></a-asset-item>
+        </a-assets>
+
+        <a-entity id="rig" trail="offset: -8 -4 0; length: 50; width: .3;" alongpath-scroll="curve: #track1;" position="26.698 23.487 4.839">
+          <a-entity id="camera" camera="fov: 60" position="0 0 0" look-controls="pointerLockEnabled: false; enabled: false;" 
+                    cursor="fuse: false; rayOrigin: mouse;" raycaster="objects: .cantap;">
+          </a-entity>
+          <a-sphere scale=".3 .3 .3" position="0 -.7 -1" animation="dur: 1800; property: position; from: 0 -.7 -1; to: 0 -0.6 -1; loop: true; dir: alternate; easing: easeInOutQuad;"></a-sphere>
+          
+          <a-entity geometry="primitive: sphere" rotation="0 180 0" scale="1000 1000 1000" material="side: back; src: https://cdn.glitch.global/0ed7936d-2680-4461-9d13-99d12f3abe79/2k_stars_milky_way.jpg?v=1699112332618"></a-entity>
+        </a-entity>
+
+        <a-curve id="track1" curve="type: Spline">
+          <a-curve-point id="pt1" position="0 1 65.591" curve-point=""></a-curve-point>
+          <a-curve-point id="pt2" position="-50 -5 -5.389" curve-point=""></a-curve-point>
+          <a-curve-point id="pt3" position="25 2 -24.106" curve-point=""></a-curve-point>
+          <a-curve-point id="pt4" position="0 146.582 -247" curve-point=""></a-curve-point>
+          <a-curve-point id="pt5" position="-151.914 40 -321.263" curve-point=""></a-curve-point>
+          <a-curve-point id="pt6" position="-155.131 1 -525" curve-point=""></a-curve-point>
+          <a-curve-point id="pt7" position="100 1 -1234" curve-point=""></a-curve-point>
+          <a-curve-point id="pt8" position="100 1 -1247" curve-point=""></a-curve-point>
+        </a-curve>
+       
+       <a-curve id="track2" curve="type: Spline" position="0 -.2 -.3">
+          <a-curve-point id="pt51" position="0 1 -147" curve-point=""></a-curve-point>
+          <a-curve-point id="pt61" position="0 111 -247" curve-point=""></a-curve-point>
+          <a-curve-point id="pt71" position="0 1 -447" curve-point=""></a-curve-point>
+          <a-curve-point id="pt81" position="0 1 -647" curve-point=""></a-curve-point>
+        </a-curve>
+
+        <a-draw-curve curveref="#track1" visible="false" material="shader: line; color: blue;"></a-draw-curve>
+       <a-draw-curve curveref="#track2" visible="false" material="shader: line; color: red;"></a-draw-curve>
+       <a-entity geometry="primitive: sphere; segmentsHeight: 64" 
+                 material="src: https://cdn.glitch.global/0ed7936d-2680-4461-9d13-99d12f3abe79/2k_makemake_fictional.jpg?v=1699112236305; roughness: 1; opacity: 1; emissiveIntensity: 0.130; emissive: #7a3700;" 
+                 scale="10 10 10" 
+                 position="-3.087 12.129 -43.180"
+                 animation="property: rotation; dur: 120000; from: 0 0 130; to: 0 -360 130; loop: true; easing: linear;">
+       </a-entity>
+        <a-entity geometry="primitive: plane; width: 2; height: 2" position="-3.087 12.129 -43.180" 
+                  material="opacity: 1; alphaTest: 0.5; transparent: true; blending: normal; color: #ffffff; src: https://cdn.glitch.global/0ed7936d-2680-4461-9d13-99d12f3abe79/Atmosphere.png?v=1699820798736;" 
+                  scale="15 15 15" look-at="[camera]">
+       </a-entity>
+       
+       <a-entity geometry="primitive: sphere; segmentsHeight: 64" 
+                 material="src: https://cdn.glitch.global/0ed7936d-2680-4461-9d13-99d12f3abe79/2k_makemake_fictional.jpg?v=1699112236305; roughness: 1; opacity: 1; emissiveIntensity: 0.730; emissive: #ff7b00;" 
+                 scale="10 10 10" 
+                 position="-153 30 -400"
+                 animation="property: rotation; dur: 120000; from: 0 0 130; to: 0 -360 130; loop: true; easing: linear;">
+       </a-entity>
+       
+       <a-entity geometry="primitive: sphere; segmentsHeight: 64"
+                 material="src: https://cdn.glitch.global/0ed7936d-2680-4461-9d13-99d12f3abe79/2k_makemake_fictional.jpg?v=1699112236305; roughness: 1; opacity: 1; emissiveIntensity: 0.430; emissive: #58bcee;" 
+                 scale="20 20 20" 
+                 position="-22 145 -292.365"
+                 animation="property: rotation; dur: 120000; from: 0 0 130; to: 0 -360 130; loop: true; easing: linear;">
+       </a-entity>
+        
+        <a-entity geometry="primitive: sphere; segmentsHeight: 64"
+                 material="src: https://cdn.glitch.global/0ed7936d-2680-4461-9d13-99d12f3abe79/2k_makemake_fictional.jpg?v=1699112236305; roughness: 1; opacity: 1; emissiveIntensity: 0.430; emissive: #ffffff;" 
+                 scale="40 40 40" 
+                 position="-30 15 -1125"
+                 animation="property: rotation; dur: 120000; from: 0 0 130; to: 0 -360 130; loop: true; easing: linear;">
+       </a-entity>
+       <!--
+       <a-entity clone-along-curve="curve: #track2; spacing: 0.2; scale: 1 1 1; rotation: 0 0 0;" geometry="primitive:box; height:0.1; width:0.1; depth:0.1"
+                 material="alphaTest: 0.5; opacity: 0.9; transparent: true; color: #05c1ff; emissive: #009dff; emissiveIntensity: 0.14; metalness: 0.8; roughness: 0.1;">
+       </a-entity>
+        <a-entity gltf-model="#model"
+                  scale="1 1 1"
+                  position="0 0 0"
+                  rotation="0 0 0"
+                  visible="false">
+        </a-entity>
+-->
+       <a-entity light="intensity: 0.04; color: #BBB; type: ambient"></a-entity>
+       <a-entity light="intensity: 0.33; castShadow: true" position="-.8 -1.2 .5"></a-entity>
+      </a-scene>
+    </div>
+    
+    <div id="front">    
+      <div class="section" style="justify-content: flex-end;">
+        <div class="block">
+          <div class="divider1"></div>
+          <h2 class="heading">Stellara<br><span style="color: #F2724A;">Ignis</span></h2>
+          <div class="divider2"></div>
+          <p class="paragraph">Witness the fiery fury of the universe's most volatile sun-like star.</p>
+        </div>
+      </div>
+      <div class="section" style="justify-content: flex-start;">
+        <div class="block">
+          <div class="divider1"></div>
+          <h2 class="heading">Eden<br><span style="color: #8CDDFF;">Incognita</span></h2>
+          <div class="divider2"></div>
+          <p class="paragraph">Explore an Earth-like planet with burgeoning life, revealing the secrets of cosmic evolution.</p>
+        </div>
+      </div>
+      <div class="section" style="justify-content: flex-end;">
+        <div class="block">
+          <div class="divider1"></div>
+          <h2 class="heading">Abyssum<br><span style="color: #00FFE0;">Aeternum</span></h2>
+          <div class="divider2"></div>
+          <p class="paragraph">Stand at the edge of a supermassive black hole, peering into the abyss of the cosmos.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div id="footer">
+      <h3>
+        FOOTER
+      </h3>
+        <div class="modal">
+        <div class="wrapper">
+          <h4>Book your place</h4>
+          <input type="name" placeholder="Name">
+          <input type="email" placeholder="Email">
+          <input type="date" style="margin: 0 20vw">
+          <div class="checkbox">
+            <input type="checkbox" name="checkbox" style="margin: 5px; width: auto">
+            <label for="checkbox" id="checkboxlabel" style="margin: 5px; color: #ffffff;">I’ve read and agree to <a>Terms and Conditions.</a></label>
+          </div>
+          <button id="cta">
+            Book the journey
+          </button>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>

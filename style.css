@@ -224,6 +224,7 @@ a {
   padding: 10px 2.5vw;
   font-size: medium;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {

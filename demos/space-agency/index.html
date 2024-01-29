@@ -37,7 +37,7 @@
               background="" fog="color:  #0d2f49;  density:  0.001;  near:  .07;  type:  exponential" style="pointer-events: auto; position: fixed;"
               >
         <a-assets timeout="30000">
-          <a-asset-item id="Spaceship" src="Spaceship2.glb" crossorigin="anonymous"></a-asset-item>
+          <a-asset-item id="Spaceship" src="assets/Spaceship2.glb" crossorigin="anonymous"></a-asset-item>
         </a-assets>
 
         <a-entity id="rig" trail="offset: -8 -4 0; length: 50; width: .3;" alongpath-scroll="curve: #track1;" position="26.698 23.487 4.839">
@@ -80,7 +80,7 @@
        <a-draw-curve curveref="#track2" visible="false" material="shader: line; color: red;"></a-draw-curve>
         
        <a-entity geometry="primitive: sphere; segmentsHeight: 64" 
-                 material="src: 2k_makemake_fictional.jpg;
+                 material="src: assets/2k_makemake_fictional.jpg;
                            roughness: 1; opacity: 1; emissiveIntensity: 0.130; emissive: #7a3700;" 
                  scale="20 20 20" 
                  position="-3.087 10 -38"
@@ -89,7 +89,7 @@
         
         <a-entity geometry="primitive: plane;"
                  material="transparent: true; alphaTest: .9;
-                           src: /Atmosphere.png;
+                           src: assets/Atmosphere.png;
                            roughness: 1; opacity: 1; emissiveIntensity: 0.730; emissive: #990033;" 
                  scale="60 60 60" 
                 position="-3.087 12.129 -43.180" look-at="[camera]"
@@ -97,12 +97,12 @@
        </a-entity>
         
         <a-entity geometry="primitive: plane; width: 2; height: 2" position="-3.087 12.129 -43.180" 
-                  material="opacity: 1; alphaTest: 0.5; transparent: true; blending: normal; color: #ffffff; src: /Atmosphere.png;" 
+                  material="opacity: 1; alphaTest: 0.5; transparent: true; blending: normal; color: #ffffff; src: assets/Atmosphere.png;" 
                   scale="15 15 15" look-at="[camera]">
        </a-entity>
        
        <a-entity geometry="primitive: sphere; segmentsHeight: 64" 
-                 material="src: /2k_eris_fictional.jpg?v=1706548882232; roughness: 1; opacity: 1; emissiveIntensity: 0.130; emissive: #58bcee;" 
+                 material="src: assets/2k_eris_fictional.jpg?v=1706548882232; roughness: 1; opacity: 1; emissiveIntensity: 0.130; emissive: #58bcee;" 
                  scale="10 10 10" 
                  position="-153 30 -355"
                  animation="property: rotation; dur: 120000; from: 0 0 130; to: 0 -360 130; loop: true; easing: linear;">
@@ -110,7 +110,7 @@
         
          <a-entity geometry="primitive: plane;"
                  material="transparent: true; alphaTest: .005; blending: normal;
-                           src: /Atmosphere.png;
+                           src: assets/Atmosphere.png;
                            roughness: 1; opacity: .9; emissiveIntensity: 0.730; emissive: #58bcee;" 
                  scale="40 40 40" 
                  position="-153 30 -355" look-at="[camera]"
@@ -118,7 +118,7 @@
        </a-entity>
        
        <a-entity geometry="primitive: sphere; segmentsHeight: 64"
-                 material="src: /2k_sun.jpg;
+                 material="src: assets/2k_sun.jpg;
                            roughness: 1; opacity: 1; emissiveIntensity: 0.230; emissive: #ff7b00;" 
                  scale="13 13 13" 
                  position="-22 145 -292.365"
@@ -127,7 +127,7 @@
         
         <a-entity geometry="primitive: plane;"
                  material="transparent: true; alphaTest: .005;
-                           src: /Atmosphere.png;
+                           src: assets/Atmosphere.png;
                            roughness: 1; opacity: 1; emissiveIntensity: 0.730; emissive: #ff0000;" 
                  scale="70 70 70" 
                  position="-22 145 -292.365" look-at="[camera]"
@@ -146,7 +146,7 @@
         
         <a-entity geometry="primitive: plane;"
                  material="transparent: true; alphaTest: .01; blending: additive;
-                           src: /Atmosphere.png;
+                           src: assets/Atmosphere.png;
                            roughness: 1; opacity: 1; emissiveIntensity: 0.730; emissive: #58bcee;" 
                  scale="90 90 90" 
                  position="-30 -350 -1125" look-at="[camera]"

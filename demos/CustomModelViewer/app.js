@@ -151,7 +151,7 @@ function adjustAndFitCamera() {
 
 
 // HDR Loader
-new RGBELoader().setPath( '/assets/' ).load( 'studio02.hdr',  function ( texture ) {
+new RGBELoader().setPath( 'assets/' ).load( 'studio02.hdr',  function ( texture ) {
     texture.mapping = THREE.EquirectangularReflectionMapping;
     //texture.color.set('red');
 

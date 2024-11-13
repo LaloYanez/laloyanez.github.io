@@ -42,6 +42,7 @@ h1 {
   font-weight: 800;
   color: #ffffff;
   margin-top: 10vh;
+  line-height: 1;
 }
 
 h2 {
@@ -101,7 +102,8 @@ span {
 
 @media only screen and (max-width: 600px) {
   #logo {
-    width: 45vw;
+    width: 60vw;
+    margin: 0 0 4vh 0;
   }
   
   h1 {

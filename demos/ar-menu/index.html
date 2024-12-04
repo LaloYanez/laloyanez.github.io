@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR Menu Demo</title>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="/style.css" />
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <model-viewer alt="Description"
+                  src="" 
+                  ar
+                  poster="" shadow-intensity="1" 
+                  camera-controls
+                crossorigin="anonymous">
+    </model-viewer>
+  
+    <header>
+      <h1>Le Gourmet</h1>
+      <p>Augmented Reality Demo</p>
+      <br>
+      <p><strong>Tap on a dish to see it in your real space</strong></p>
+    </header>
+
+    <div class="menu-container">
+        <div class="menu-section">
+            <h2>Appetizers</h2>
+            <div class="menu-item">
+                <div>
+                    <h3 onclick="model('toast')">Toast</h3>
+                    <p>Grilled toast with egg and cheese.</p>
+                </div>
+                <span>$7</span>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h3>Bruschetta</h3>
+                    <p>Grilled bread topped with fresh tomatoes, garlic, and basil.</p>
+                </div>
+                <span>$8</span>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h3>Stuffed Mushrooms</h3>
+                    <p>Mushrooms filled with a savory blend of cheese and herbs.</p>
+                </div>
+                <span>$12</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Main Courses</h2>
+            <!-- <div class="menu-item">
+                <div>
+                    <h3 onclick="model('burger')">Cheeseburger</h3>
+                    <p>Cheeseburger and fries, served with a twist.</p>
+                </div>
+                <span>$20</span>
+            </div> -->
+            <div class="menu-item">
+                <div>
+                    <h3>Grilled Salmon</h3>
+                    <p>Fresh Atlantic salmon served with a lemon butter sauce.</p>
+                </div>
+                <span>$25</span>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h3>Filet Mignon</h3>
+                    <p>Tender beef steak cooked to perfection.</p>
+                </div>
+                <span>$35</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Desserts</h2>
+            <div class="menu-item">
+                <div>
+                    <h3 onclick="model('Knedle2')">Knedle</h3>
+                    <p>Pistachio mousse dome with chocolate filling.</p>
+                </div>
+                <span>$5</span>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h3 onclick="model('PastelDeNata')">Pastel de Nata</h3>
+                    <p>Portuguese egg custard tart, optionally served with dusted cinnamon.</p>
+                </div>
+                <span>$3</span>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h3>Crème Brûlée</h3>
+                    <p>Classic French dessert with a caramelized sugar crust.</p>
+                </div>
+                <span>$5</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Eduardo Yáñez. All rights reserved.</p>
+    </footer>
+</body>
+</html>
